@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .fylo-container {
+      background-color: white;
+      padding: 40px 35px 30px;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 999;
+    }
+    .fylo-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .all-items {
+      display: flex;
+      list-style-type: none;
+    }
+    .items{
+      margin-right: 40px;
+      color: black;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+    }
+    .items:hover{
+      color: hsl(224, 93%, 58%);
+      transition: all 0.3s ease-out;
+    }
+    .logo{
+      width: 150px;
+      margin-left:30px ;
+    }
+    .main-img{
+      width: 500px;
+      margin-left: 100px;
+    }
+    .main{
+      align-items: center;
+      justify-self: start;
+      display: flex;
+      width: 100%;
+      font-family: 'Open Sans', sans-serif;
+      margin-top: 40px;
+    }
+    .main-container{
+      margin-left: 60px;
+      max-width: 40%;
+    }
+    .main-h1{
+      margin-bottom: 30px;
+    }
+    .para1{
+      margin-bottom: 20px;
+    }
+    #email{
+      width: 200px;
+      height: 30px;
+      border-radius: 3px;
+      border: 1px solid darkgray;
+    }
+    .main-btn{
+      padding: 7px 25px;
+      border: none;
+      background-color: hsl(224, 93%, 58%);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .main-btn:hover{
+      background-color:cornflowerblue;
+      transition: all 0.3s ease-out;
+    }
+    .get{
+      text-decoration: none;
+      color: white;
+    }
+    /* OTHERS */
+
+    .other{
+      align-items: center;
+      justify-self: start;
+      display: flex;
+      width: 100%;
+      font-family: 'Open Sans', sans-serif;
+      margin-top: 150px;
+    }
+    .other-container{
+      margin-left: 60px;
+      max-width: 40%;
+    }
+    .other-img{
+      width: 600px;
+      margin-left: 100px;
+      margin-top: 50px;
+    }
+    .other-h1{
+      margin-bottom: 30px;
+    }
+    .para2{
+      margin-bottom: 20px;
+    }
+    .arrow-link{
+      margin-top: 20px;
+    }
+    .arrow{
+      color: hsl(170, 45%, 43%);
+    }
+    .other-card{
+      margin-top: 30px;
+      width: 350px;
+      height: 220px;
+      background-color: hsl(170, 45%, 43%);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .card-pro{
+      display: flex;
+      align-items:  center;
+    }
+    .profil{
+      width: 65px;
+      margin-top: 10px;
+      border-radius: 100px;
+    }
+    .ad{
+      margin-left: 10px;
+    }
+    
+    /* DENEME */
+
+    .deneme{
+      background-color: hsl(238, 22%, 44%);
+      margin-top: 100px;
+      height: 300px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .free{
+      padding-top: 90px;
+      padding-left: 90px;
+      text-align: start;
+      display: flex;
+      align-items: center;
+    }
+    .get-early{
+      color: white;
+      margin-bottom: 20px;
+    }
+    .genel-btn{
+      width: 60%;
+      margin-left: 60px;
+      display: flex;
+      flex-direction: column;
+    }
+    .free-block{
+      width: 40%;
+      display: inline-block;
+      margin-right: 100px;
+    }
+    .free-para{
+      color: white;
+    }
+    #email-ex{
+      border: none;
+      border-radius: 10px;
+      width: 400px;
+      height: 50px;
+      text-align: left;
+    }
+    .genel-btn-get{
+      width: 200px;
+      height: 40px;
+      background-color: hsl(224, 93%, 58%);
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .genel-btn-get:hover{
+      background-color:cornflowerblue;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+    }
+
+    .footer{
+      background-color: hsl(243, 87%, 12%);
+      padding-bottom: 3rem;
+    }
+    .son{
+      display: flex;
+      flex-wrap: wrap;
+      height: 30vh;
+      margin: 0 auto;
+      padding: 50px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .footer-heading{
+      display: flex;
+      flex-direction: column;
+      margin-right: 150px;
+    }
+    .footer-logo{
+      display: inline-block;
+      flex-direction: column;
+      margin-right: 3rem;
+      width: 40%;
+      padding-left: 60px;
+    }
+    .footer-heading a{
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+    .footer-heading a:hover{
+      color: cornflowerblue;
+      transition: all 0.3s ease-out;
+    }
+    .footer-logo p{
+      color: white;
+      font-size: 14px;
+    }
+    .icon-footer{
+      display: flex;
+      flex-direction: column;
+    }
+    .icon-1{
+      display: flex;
+      margin-top: 10px;
+    }
+    .icon-2{
+      display: flex;
+      margin-top: 10px;
+    }
+    .icon-1 p {
+      margin-left: 10px;
+    }
+    .icon-2 p {
+      margin-left: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="genel">
+    <div class="page">
+      <div class="fylo-container">
+        <div class="fylo-head">
+          <img src="images/logo.svg" class="logo" alt="">
+          <ul class="all-items">
+            <li><a href="#" class="items">Features</a></li>
+            <li><a href="#" class="items">Team</a></li>
+            <li><a href="#" class="items">Sıgn Up</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="main">
+        <div class="main-container">
+            <h1 class="main-h1">All your files in one secure location, accessible anywhere.</h1>
+            <p class="para1">Fylo stores your most important files in one secure location. 
+            Access them wherever you need, share and collaborate with friends, 
+            family, and co-workers.</p>
+            <input type="email" name="email" id="email" placeholder="Enter your e-mail">
+            <button class="main-btn"><a href="#" class="get">Get Started</a></button>
+        </div>
+        <div class="main-img-container">
+          <img src="images/illustration-1.svg" class="main-img" alt="">
+        </div>
+      </div>
+
+
+      <div class="other">
+        <div class="other-container">
+          <h1 class="other-h1">Stay productive, wherever you are</h1>
+          <p class="para2">Never let location be an issue when accessing your files. Fylo has you 
+            covered for all of your file storage needs.
+          </p>
+          <p class="para3">Securely share files and folders with friends, family and colleagues for 
+            live collaboration. No email attachments required!</p>
+            <div class="arrow-link">
+              <a href="#" class="arrow">See how Fylo works</a>
+              <img src="images/icon-arrow.svg" alt="">
+            </div>
+            <div class="other-card">
+              <div class="icon"><img src="images/icon-quotes.svg" alt=""></div>
+              <div class="card"><p class="card-p">Fylo has improved our team productivity by an order of magnitude. Since 
+                making the switch our team has become a well-oiled collaboration machine.</p></div>
+                <div class="card-pro">
+                  <img src="images/avatar-testimonial.jpg" alt="" class="profil">
+                  <div>
+                    <p class="ad">Kyle Burton</p>
+                    <p class="ad">Founder & CEO, Huddle</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="other-img-container">
+          <img src="images/illustration-2.svg" class="other-img" alt="">
+        </div>
+      </div>
+
+
+      <div class="deneme">
+        <div class="free">
+          <div class="free-block">
+            <h1 class="get-early">Get early access today</h1>
+            <p class="free-para">It only takes a minute to sign up and our free starter tier is extremely generous. 
+              If you have any questions, our support team would be happy to help you.</p>
+          </div>
+          <div class="genel-btn">
+            <input type="email" name="email" id="email-ex" placeholder="Enter your e-mail">
+            <button class="genel-btn-get"><a href="#" class="get">Get Started</a></button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="footer">
+        <div class="son">
+          <div class="footer-logo">
+            <img src="images/logo.svg" alt="">
+            <div class="icon-footer">
+              <div class="icon-1">
+              <img src="images/icon-phone.svg" alt=""> 
+              <p>Phone: +1-543-123-4567</p>
+              </div>
+              <div class="icon-2">
+              <img src="images/icon-email.svg" alt=""> 
+                <div>
+                  <p>example@fylo.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-heading">
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Press</a>
+          </div>
+          <div class="footer-heading">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Features
+  Team
+  Sign In
+
+  All your files in one secure location, accessible anywhere.
+
+  Fylo stores your most important files in one secure location. 
+  Access them wherever you need, share and collaborate with friends, 
+  family, and co-workers.
+
+  Get Started
+
+  Stay productive, wherever you are
+
+  Never let location be an issue when accessing your files. Fylo has you 
+  covered for all of your file storage needs.
+
+  Securely share files and folders with friends, family and colleagues for 
+  live collaboration. No email attachments required!
+
+  See how Fylo works
+
+  Fylo has improved our team productivity by an order of magnitude. Since 
+  making the switch our team has become a well-oiled collaboration machine.
+
+  Kyle Burton
+  Founder & CEO, Huddle
+
+  Get early access today
+
+  It only takes a minute to sign up and our free starter tier is extremely generous. 
+  If you have any questions, our support team would be happy to help you.
+
+  Get Started For Free
+
+  Phone: +1-543-123-4567
+  example@fylo.com
+
+  About Us
+  Jobs
+  Press
+  Blog
+
+  Contact Us
+  Terms
+  Privacy
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>-->
+</body>
+</html>
